@@ -12,11 +12,13 @@ namespace ConsoleApp1
         private int price;
         private int quality;
         private int categoryID;
+        private string categoryName;
 
         public string Name { get => name; set => name = value; }
         public int Price { get => price; set => price = value; }
         public int Quality { get => quality; set => quality = value; }
         public int CategoryID { get => categoryID; set => categoryID = value; }
+        public string CategoryName { get => categoryName; set => categoryName = value; }
 
         public Product()
         {
@@ -30,7 +32,14 @@ namespace ConsoleApp1
             this.CategoryID = categoryID;
         }
 
-        
+        public Product(string name, int price, int quality, int categoryID, string categoryName)
+        {
+            this.Name = name;
+            this.Price = price;
+            this.Quality = quality;
+            this.CategoryID = categoryID;
+            this.CategoryName = categoryName;
+        }
 
         public override string ToString()
         {

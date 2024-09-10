@@ -8,9 +8,9 @@ namespace ConsoleApp1
 {
     public class Menu
     {
-        private int id {  get; set; }
-        private string title { get; set; }
-        private int parent_id { get; set; }
+        public int id {  get; set; }
+        public string title { get; set; }
+        public int parent_id { get; set; }
 
         public Menu(int id, string title, int parent_id)
         {

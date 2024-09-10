@@ -18,5 +18,9 @@ namespace ConsoleApp1
             this.id = id;
             this.name = name;
         }
+        public override string ToString()
+        {
+            return "Id" + this.id + "Name:" + this.Name ;
+        }
     }
 }
