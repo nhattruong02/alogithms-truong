@@ -38,338 +38,89 @@ namespace ConsoleApp1
             new Menu(id: 7, title: "Moi truong đo thi", 5),
             new Menu(id: 8, title: "Giao thông un tac", 4),
         };
+        private static Bai4_6 Bai4_6 = new Bai4_6();
+        private static Bai11_16 Bai11_16 = new Bai11_16();
+        private static Bai21_25 Bai21_25 = new Bai21_25();
         static void Main(string[] args)
         {
             // Find Product
             Console.WriteLine("Find Product by name CPU");
-            Console.WriteLine(findProduct(products, "CPU").ToString());
+            Console.WriteLine(Bai4_6.findProduct(products, "CPU").ToString());
             // Find ProductByCategory
             Console.WriteLine("Find ProductByCategory id = 2");
-            for (int i = 0; i < findbyCategory(products, 2).Count; i++)
+            for (int i = 0; i < Bai4_6.findbyCategory(products, 2).Count; i++)
             {
-                Console.WriteLine(findbyCategory(products, 2)[i].ToString());
+                Console.WriteLine(Bai4_6.findbyCategory(products, 2)[i].ToString());
             }
 
             // Find ProductByPrice
             Console.WriteLine("Find ProductByPrice < 200");
-            for (int i = 0; i < findbyPrice(products, 200).Count; i++)
+            for (int i = 0; i < Bai4_6.findbyPrice(products, 200).Count; i++)
             {
-                Console.WriteLine(findbyPrice(products, 200)[i].ToString());
+                Console.WriteLine(Bai4_6.findbyPrice(products, 200)[i].ToString());
             }
 
             //11 Buble Sort
-            /*            Console.WriteLine("Buble sort");
-                        for (int i = 0; i < sortByPrice(products).Count; i++)
-                        {
-                            Console.WriteLine(sortByPrice(products)[i].ToString());
-                        }*/
+            Console.WriteLine("Buble sort");
+            for (int i = 0; i < Bai11_16.sortByPrice(products).Count; i++)
+            {
+                Console.WriteLine(Bai11_16.sortByPrice(products)[i].ToString());
+            }
 
             //12 Insertion Sort
-            /*            Console.WriteLine("Insertion sort");
-                        for (int i = 0; i < sortByName(products).Count; i++)
-                        {
-                            Console.WriteLine(sortByName(products)[i].ToString());
-                        }*/
+            Console.WriteLine("Insertion sort");
+            for (int i = 0; i < Bai11_16.sortByName(products).Count; i++)
+            {
+                Console.WriteLine(Bai11_16.sortByName(products)[i].ToString());
+            }
 
             //13 Insertion Sort
-            /*            Console.WriteLine("Insertion sort");
-                        List<Category> sortedList = categories.OrderBy(x => x.Name).ToList();
-                        for (int i = 0; i < sortByCategoryName(products, sortedList).Count; i++)
-                        {
-                            Console.WriteLine(sortByCategoryName(products, sortedList)[i].ToString());
-                        }*/
+            Console.WriteLine("Insertion sort");
+            List<Category> sortedList = categories.OrderBy(x => x.Name).ToList();
+            for (int i = 0; i < Bai11_16.sortByCategoryName(products, sortedList).Count; i++)
+            {
+                Console.WriteLine(Bai11_16.sortByCategoryName(products, sortedList)[i].ToString());
+            }
 
             //14 mapProductByCategory
-            List<Product> products1 = mapProductByCategory(products, categories);
+            List<Product> products1 = Bai11_16.mapProductByCategory(products, categories);
             for (int i = 0; i < products1.Count; i++)
             {
                 Console.WriteLine("Name:" + products1[i].Name + "\tprice:" + products1[i].Price + "\tquality:"
                     + products1[i].Quality + "\tcategoryID:" + products1[i].CategoryID + "\tnameCategory:" + products1[i].CategoryName);
             }
 
-            /*
 
-            /*            //15 minByPrice
-                        Console.WriteLine("MinByPrice");
-                        Console.WriteLine(minByPrice(products).ToString());
-                        //16 maxByPrice
-                        Console.WriteLine("MaxByPrice");
-                        Console.WriteLine(maxByPrice(products).ToString());*/
+
+            //15 minByPrice
+            Console.WriteLine("MinByPrice");
+            Console.WriteLine(Bai11_16.minByPrice(products).ToString());
+            //16 maxByPrice
+            Console.WriteLine("MaxByPrice");
+            Console.WriteLine(Bai11_16.maxByPrice(products).ToString());
 
             //21 de quy
-            /*            Console.Write("Salary:");
-                        double s = float.Parse(Console.ReadLine());
-                        Console.Write("Year:");
-                        int n = int.Parse(Console.ReadLine());
-                        Console.WriteLine(calSalary(s, n));*/
+            Console.Write("Salary:");
+            double s = float.Parse(Console.ReadLine());
+            Console.Write("Year:");
+            int n = int.Parse(Console.ReadLine());
+            Console.WriteLine(Bai21_25.calSalary(s, n));
 
             //21 khong de quy
-            /*            Console.Write("Salary:");
-                        double s1 = float.Parse(Console.ReadLine());
-                        Console.Write("Year:");
-                        int n1 = int.Parse(Console.ReadLine());
-                        Console.WriteLine(calSalary1(s1, n1));*/
+            Console.Write("Salary:");
+            double s1 = float.Parse(Console.ReadLine());
+            Console.Write("Year:");
+            int n1 = int.Parse(Console.ReadLine());
+            Console.WriteLine(Bai21_25.calSalary1(s1, n1));
 
-            /*            //22 de quy
-                        Console.WriteLine("So thang can gui: " + calMonth(1000, 0.5f));
+            //22 de quy
+            Console.WriteLine("So thang can gui: " + Bai21_25.calMonth(1000, 0.5f));
 
-                        //22 khong de quy
-                        Console.WriteLine("So thang can gui: " + calMonth2(1000, 0.5f));*/
+            //22 khong de quy
+            Console.WriteLine("So thang can gui: " + Bai21_25.calMonth2(1000, 0.5f));/*
 
             //23 printMenu
             printMenu(menu);
-        }
-
-        private static void printMenu(List<Menu> menus)
-        {
-            List<Menu> parent = new List<Menu>();
-            for (int i = 0; i < menus.Count; i++)
-            {
-                if (menu[i].parent_id == 0)
-                {
-                    parent.Add(menu[i]);
-                }
-            }
-            foreach (Menu menu in parent)
-            {
-                foreach(Menu item in menus)
-                {
-                    Console.WriteLine(menu.title);
-                    if (menu.title.Contains(item.title))
-                    {
-                        Console.WriteLine(draw(item.parent_id) + item.title);
-                    }
-                }
-
-            }
-
-        }
-
-        public static string draw(int number)
-        {
-            string dash = "";
-            for(int i = 0; i< number; i++) {
-                dash += "--";
-            }
-            return dash;
-        }
-
-        private static int calMonth(double money, float rate)
-        {
-            int month = 0;
-            month = int.Parse(calMonth1(money, rate, month).ToString());
-            return month;
-        }
-        private static bool change = true;
-        private static double firstMoney;
-        private static double calMonth1(double money, float rate, int month)
-        {
-            if (change)
-                firstMoney = money;
-            if (money >= 2 * firstMoney)
-                return month;
-            month++;
-            change = false;
-            return calMonth1(money + money * rate, rate, month);
-        }
-
-        private static int calMonth2(double money, float rate)
-        {
-            int month = 0;
-            double firstMoney = money;
-            double sum = 0;
-            while (sum <= (2 * firstMoney))
-            {
-                month++;
-                sum = money + (money * rate);
-                money = sum;
-            }
-            return month;
-        }
-
-
-        private static double calSalary(double salary, int n)
-        {
-            if (n == 1)
-                return salary;
-            salary = calSalary(salary, n - 1) + calSalary(salary, n - 1) * 0.1;
-            return salary;
-        }
-
-        private static double calSalary1(double salary, int n)
-        {
-            double sumSalary = 0;
-            for (int i = 1; i <= n; i++)
-            {
-                sumSalary = salary + (salary * 0.1);
-            }
-            return sumSalary;
-        }
-
-        private static Product minByPrice(List<Product> products)
-        {
-            Product p = new Product();
-            p = products[0];
-            for (int i = 1; i <= products.Count - 1; i++)
-            {
-                if (products[i].Price < p.Price)
-                {
-                    p = products[i];
-                }
-            }
-            return p;
-        }
-
-        private static Product maxByPrice(List<Product> products)
-        {
-            Product p = new Product();
-            p = products[0];
-            for (int i = 1; i <= products.Count - 1; i++)
-            {
-                if (products[i].Price > p.Price)
-                {
-                    p = products[i];
-                }
-            }
-            return p;
-        }
-
-        private static Product findProduct(List<Product> p, string nameProduct)
-        {
-            Product p1 = new Product();
-            for (int i = 0; i < p.Count; i++)
-            {
-                if (p[i].Name.Equals(nameProduct))
-                {
-                    p1 = p[i];
-                }
-            }
-            return p1;
-        }
-
-        private static List<Product> findbyCategory(List<Product> p, int categoryID)
-        {
-            List<Product> p2 = new List<Product>();
-            for (int i = 0; i < p.Count; i++)
-            {
-                if (p[i].CategoryID == categoryID)
-                {
-                    p2.Add(p[i]);
-                }
-            }
-            return p2;
-
-        }
-        private static List<Product> findbyPrice(List<Product> p, int price)
-        {
-            List<Product> p2 = new List<Product>();
-            for (int i = 0; i < p.Count; i++)
-            {
-                if (p[i].Price <= price)
-                {
-                    p2.Add(p[i]);
-                }
-            }
-            return p2;
-
-        }
-
-        private static List<Product> sortByPrice(List<Product> p)
-        {
-
-            for (int i = 0; i < p.Count; i++)
-            {
-                for (int j = 0; j < p.Count - 1; j++)
-                {
-                    if (p[j].Price > p[j + 1].Price)
-                    {
-                        swap(p, j, j + 1);
-                    }
-                }
-            }
-            return p;
-
-        }
-
-        private static void swap(List<Product> products, int p1, int p2)
-        {
-            Product tmp = new Product();
-            tmp = products[p1];
-            products[p1] = products[p2];
-            products[p2] = tmp;
-        }
-
-        private static List<Product> sortByName(List<Product> p)
-        {
-            int j;
-            Product tmp = new Product();
-            for (int i = 1; i < p.Count; i++)
-            {
-                j = i - 1;
-                tmp = p[i];
-                while (tmp.Name.Length < p[j].Name.Length && j > 0)
-                {
-                    p[j + 1] = p[j];
-                    j--;
-                }
-                p[j + 1] = tmp;
-            }
-
-            return p;
-
-        }
-
-        private static List<Product> sortByCategoryName(List<Product> p, List<Category> c)
-        {
-            int j;
-            Product tmp;
-            for (int i = 1; i < p.Count; i++)
-            {
-                j = i - 1;
-                tmp = p[i];
-                string name = getCategoryName(tmp.CategoryID, c);
-                while (j >= 0)
-                {
-                    string currentName = getCategoryName(products[j].CategoryID, c);
-                    if (string.Compare(currentName, name) <= 0)
-                    {
-                        break;
-                    }
-                    p[j + 1] = p[j];
-                    j--;
-                }
-                p[j + 1] = tmp;
-            }
-
-            return p;
-        }
-
-
-        private static string getCategoryName(int idCategory, List<Category> categories)
-        {
-            foreach (Category c in categories)
-            {
-                if (c.Id == idCategory)
-                {
-                    return c.Name;
-                }
-            }
-            return null;
-        }
-
-        private static List<Product> mapProductByCategory(List<Product> p, List<Category> c)
-        {
-            foreach (Product p2 in p)
-            {
-                foreach (Category c2 in c)
-                {
-                    if (p2.CategoryID == c2.Id)
-                    {
-                        p2.CategoryName = c2.Name;
-                    }
-                }
-            }
-            return p;
         }
 
     }
