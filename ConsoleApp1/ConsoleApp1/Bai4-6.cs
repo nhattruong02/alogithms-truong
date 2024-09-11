@@ -8,6 +8,12 @@ namespace ConsoleApp1
 {
     public class Bai4_6
     {
+        /// <summary>
+        /// Find Product by name
+        /// </summary>
+        /// <param name="p"></param>
+        /// <param name="nameProduct"></param>
+        /// <returns></returns>
         public Product findProduct(List<Product> p, string nameProduct)
         {
             Product p1 = new Product();
@@ -21,6 +27,12 @@ namespace ConsoleApp1
             return p1;
         }
 
+        /// <summary>
+        /// Find product by category
+        /// </summary>
+        /// <param name="p"></param>
+        /// <param name="categoryID"></param>
+        /// <returns></returns>
         public List<Product> findbyCategory(List<Product> p, int categoryID)
         {
             List<Product> p2 = new List<Product>();
@@ -34,6 +46,13 @@ namespace ConsoleApp1
             return p2;
 
         }
+
+        /// <summary>
+        /// Find product by price
+        /// </summary>
+        /// <param name="p"></param>
+        /// <param name="price"></param>
+        /// <returns></returns>
         public List<Product> findbyPrice(List<Product> p, int price)
         {
             List<Product> p2 = new List<Product>();

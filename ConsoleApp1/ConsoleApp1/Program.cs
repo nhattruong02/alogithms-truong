@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.ExceptionServices;
 
@@ -43,7 +44,7 @@ namespace ConsoleApp1
         private static Bai21_25 Bai21_25 = new Bai21_25();
         static void Main(string[] args)
         {
-            // Find Product
+/*            // Find Product
             Console.WriteLine("Find Product by name CPU");
             Console.WriteLine(Bai4_6.findProduct(products, "CPU").ToString());
             // Find ProductByCategory
@@ -58,9 +59,9 @@ namespace ConsoleApp1
             for (int i = 0; i < Bai4_6.findbyPrice(products, 200).Count; i++)
             {
                 Console.WriteLine(Bai4_6.findbyPrice(products, 200)[i].ToString());
-            }
+            }*/
 
-            //11 Buble Sort
+            /*//11 Buble Sort
             Console.WriteLine("Buble sort");
             for (int i = 0; i < Bai11_16.sortByPrice(products).Count; i++)
             {
@@ -117,10 +118,47 @@ namespace ConsoleApp1
             Console.WriteLine("So thang can gui: " + Bai21_25.calMonth(1000, 0.5f));
 
             //22 khong de quy
-            Console.WriteLine("So thang can gui: " + Bai21_25.calMonth2(1000, 0.5f));/*
+            Console.WriteLine("So thang can gui: " + Bai21_25.calMonth2(1000, 0.5f));
 
             //23 printMenu
-            printMenu(menu);
+            Bai21_25.printMenu(menu);*/
+
+            //24 Stack
+            Stack<Product> stack = new Stack<Product>();
+            for(int i = 0; i< products.Count - 2; i++)
+            {
+                stack.push(products[i]);
+            }
+            // Top of Stack
+            Console.WriteLine("Top of Stack");
+            Console.WriteLine(stack.peek().ToString());
+            // Pop stack
+            Console.WriteLine("Pop stack");
+            stack.pop();
+            Console.WriteLine(stack.peek().ToString());
+
+            //25 Queue
+            Queue<Product> queue = new Queue<Product>();
+            for (int i = 0; i < products.Count - 4; i++)
+            {
+                queue.enqueue(products[i]);
+            }
+           
+            // front element Queue
+            Console.WriteLine("front element Queue");
+            Console.WriteLine(queue.getFront().ToString());
+            // rear element Queue
+            Console.WriteLine("rear element Queue");
+            Console.WriteLine(queue.getRear().ToString());
+            // Dequeue
+            queue.dequeue();
+            // front dequeue
+            Console.WriteLine("front dequeue");
+            Console.WriteLine(queue.getFront().ToString());
+            // rear dequeue
+            Console.WriteLine("rear dequeue");
+            Console.WriteLine(queue.getRear().ToString());
+
         }
 
     }
