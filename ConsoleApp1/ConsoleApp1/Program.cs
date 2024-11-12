@@ -44,24 +44,24 @@ namespace ConsoleApp1
         private static Bai21_25 Bai21_25 = new Bai21_25();
         static void Main(string[] args)
         {
-/*            // Find Product
-            Console.WriteLine("Find Product by name CPU");
-            Console.WriteLine(Bai4_6.findProduct(products, "CPU").ToString());
-            // Find ProductByCategory
-            Console.WriteLine("Find ProductByCategory id = 2");
-            for (int i = 0; i < Bai4_6.findbyCategory(products, 2).Count; i++)
-            {
-                Console.WriteLine(Bai4_6.findbyCategory(products, 2)[i].ToString());
-            }
+            /*            // Find Product
+                        Console.WriteLine("Find Product by name CPU");
+                        Console.WriteLine(Bai4_6.findProduct(products, "CPU").ToString());
+                        // Find ProductByCategory
+                        Console.WriteLine("Find ProductByCategory id = 2");
+                        for (int i = 0; i < Bai4_6.findbyCategory(products, 2).Count; i++)
+                        {
+                            Console.WriteLine(Bai4_6.findbyCategory(products, 2)[i].ToString());
+                        }
 
-            // Find ProductByPrice
-            Console.WriteLine("Find ProductByPrice < 200");
-            for (int i = 0; i < Bai4_6.findbyPrice(products, 200).Count; i++)
-            {
-                Console.WriteLine(Bai4_6.findbyPrice(products, 200)[i].ToString());
-            }*/
+                        // Find ProductByPrice
+                        Console.WriteLine("Find ProductByPrice < 200");
+                        for (int i = 0; i < Bai4_6.findbyPrice(products, 200).Count; i++)
+                        {
+                            Console.WriteLine(Bai4_6.findbyPrice(products, 200)[i].ToString());
+                        }*/
 
-            /*//11 Buble Sort
+ /*           //11 Buble Sort
             Console.WriteLine("Buble sort");
             for (int i = 0; i < Bai11_16.sortByPrice(products).Count; i++)
             {
@@ -118,10 +118,10 @@ namespace ConsoleApp1
             Console.WriteLine("So thang can gui: " + Bai21_25.calMonth(1000, 0.5f));
 
             //22 khong de quy
-            Console.WriteLine("So thang can gui: " + Bai21_25.calMonth2(1000, 0.5f));
+            Console.WriteLine("So thang can gui: " + Bai21_25.calMonth2(1000, 0.5f));*/
 
             //23 printMenu
-            Bai21_25.printMenu(menu);*/
+            Bai21_25.printMenu(menu);
 
             //24 Stack
             Stack<Product> stack = new Stack<Product>();
